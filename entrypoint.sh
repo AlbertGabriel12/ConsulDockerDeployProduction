@@ -9,4 +9,5 @@ echo "$CONSUL_TLS_CA"   | base64 -d > /tmp/certs/rootCA.pem
 
 exec consul agent \
   -config-file=/etc/consul/consul.hcl \
-  -hcl="ports { https = ${PORT} }"
+  -hcl="ports { https = ${PORT} }" \
+  -hcl="acl { tokens { initial_management = \"${CONSUL_TOKEN}\" } }"
