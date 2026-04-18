@@ -3,7 +3,7 @@ client_addr = "0.0.0.0"
 
 ports {
   http  = -1
-  https = ${PORT}
+  https = "PORT"
 }
 
 verify_incoming = true
